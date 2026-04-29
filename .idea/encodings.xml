@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding">
+    <file url="file://$PROJECT_DIR$/app/src/main/java/com/example/myapplication/MyApplication.kt" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/app/src/main/java/com/example/myapplication/data/local/AppDatabase.kt" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/app/src/main/java/com/example/myapplication/data/local/FavoriteDao.kt" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/app/src/main/java/com/example/myapplication/data/local/entities/ProductEntity.kt" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/app/src/main/java/com/example/myapplication/data/remote/ProductApi.kt" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/app/src/main/java/com/example/myapplication/data/remote/dto/ProductDto.kt" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/app/src/main/java/com/example/myapplication/data/repository/ProductRepositoryImpl.kt" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/app/src/main/java/com/example/myapplication/di/DatabaseModule.kt" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/app/src/main/java/com/example/myapplication/di/NetworkModule.kt" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/app/src/main/java/com/example/myapplication/di/RepositoryModule.kt" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/app/src/main/java/com/example/myapplication/domain/model/Product.kt" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/app/src/main/java/com/example/myapplication/domain/repository/ProductRepository.kt" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/app/src/main/java/com/example/myapplication/domain/usecase/GetFavoritesUseCase.kt" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/app/src/main/java/com/example/myapplication/domain/usecase/GetProductsUseCase.kt" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/app/src/main/java/com/example/myapplication/domain/usecase/ToggleFavoriteUseCase.kt" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/app/src/main/java/com/example/myapplication/ui/favorites/FavoritesScreen.kt" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/app/src/main/java/com/example/myapplication/ui/favorites/FavoritesViewModel.kt" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/app/src/main/java/com/example/myapplication/ui/navigation/NavGraph.kt" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/app/src/main/java/com/example/myapplication/ui/product_list/ProductListScreen.kt" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/app/src/main/java/com/example/myapplication/ui/product_list/ProductListViewModel.kt" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/app/src/main/java/com/example/myapplication/ui/profile/ProfileScreen.kt" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/app/src/main/java/com/example/myapplication/ui/profile/ProfileViewModel.kt" charset="UTF-8" />
+  </component>
+</project>
