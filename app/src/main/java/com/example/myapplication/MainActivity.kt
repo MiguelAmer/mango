@@ -17,22 +17,22 @@ import androidx.compose.material3.SnackbarHost
 import androidx.compose.material3.SnackbarHostState
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
-import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.navigation.NavDestination.Companion.hierarchy
 import androidx.navigation.NavGraph.Companion.findStartDestination
 import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
+import com.example.designsystem.theme.MyApplicationTheme
+import com.example.favorites.FavoritesViewModel
 import com.example.myapplication.ui.navigation.AppNavGraph
 import com.example.myapplication.ui.navigation.Screen
-import com.example.myapplication.ui.theme.MyApplicationTheme
-import com.example.myapplication.ui.viewmodel.ProductViewModel
+import com.example.productlist.ProductViewModel
+import com.example.profile.ProfileViewModel
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -44,16 +44,27 @@ class MainActivity : ComponentActivity() {
         setContent {
             MyApplicationTheme {
                 val navController = rememberNavController()
-                val viewModel: ProductViewModel = hiltViewModel()
+                val productViewModel: ProductViewModel = hiltViewModel()
+                val favoritesViewModel: FavoritesViewModel = hiltViewModel()
+                val profileViewModel: ProfileViewModel = hiltViewModel()
 
                 val snackbarHostState = remember { SnackbarHostState() }
 
-                val errorMessage by viewModel.errorMessage.collectAsStateWithLifecycle()
+                val productErrorMessage by productViewModel.errorMessage.collectAsStateWithLifecycle()
 
-                LaunchedEffect(errorMessage) {
-                    errorMessage?.let { message ->
+                LaunchedEffect(productErrorMessage) {
+                    productErrorMessage?.let { message ->
                         snackbarHostState.showSnackbar(message)
-                        viewModel.clearErrorMessage()
+                        productViewModel.clearErrorMessage()
+                    }
+                }
+
+                val profileErrorMessage by profileViewModel.errorMessage.collectAsStateWithLifecycle()
+
+                LaunchedEffect(profileErrorMessage) {
+                    profileErrorMessage?.let { message ->
+                        snackbarHostState.showSnackbar(message)
+                        profileViewModel.clearErrorMessage()
                     }
                 }
 
@@ -100,7 +111,7 @@ class MainActivity : ComponentActivity() {
                     }
                 ) { innerPadding ->
                     Surface(modifier = Modifier.padding(innerPadding)) {
-                        AppNavGraph(navController = navController, viewModel = viewModel)
+                        AppNavGraph(navController = navController, productViewModel = productViewModel, favoritesViewModel = favoritesViewModel, profileViewModel = profileViewModel)
                     }
                 }
             }

@@ -1,7 +1,7 @@
 package com.example.myapplication.di
 
-import com.example.myapplication.data.remote.ProductApi
-import com.example.myapplication.data.remote.UserApi
+import com.example.network.remote.ProductApi
+import com.example.network.remote.UserApi
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn

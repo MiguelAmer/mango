@@ -4,10 +4,12 @@ import androidx.compose.runtime.Composable
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
-import com.example.myapplication.ui.favorites.FavoritesScreen
-import com.example.myapplication.ui.product_list.ProductListScreen
-import com.example.myapplication.ui.profile.ProfileScreen
-import com.example.myapplication.ui.viewmodel.ProductViewModel
+import com.example.favorites.FavoritesScreen
+import com.example.favorites.FavoritesViewModel
+import com.example.productlist.ProductListScreen
+import com.example.productlist.ProductViewModel
+import com.example.profile.ProfileScreen
+import com.example.profile.ProfileViewModel
 
 sealed class Screen(val route: String) {
     object ProductList : Screen("product_list")
@@ -16,16 +18,16 @@ sealed class Screen(val route: String) {
 }
 
 @Composable
-fun AppNavGraph(navController: NavHostController, viewModel: ProductViewModel) {
+fun AppNavGraph(navController: NavHostController, productViewModel: ProductViewModel, favoritesViewModel: FavoritesViewModel, profileViewModel: ProfileViewModel) {
     NavHost(navController = navController, startDestination = Screen.ProductList.route) {
         composable(Screen.ProductList.route) {
-            ProductListScreen(viewModel = viewModel)
+            ProductListScreen(viewModel = productViewModel)
         }
         composable(Screen.Favorites.route) {
-            FavoritesScreen(viewModel = viewModel)
+            FavoritesScreen(viewModel = favoritesViewModel)
         }
         composable(Screen.Profile.route) {
-            ProfileScreen(viewModel = viewModel)
+            ProfileScreen(viewModel = profileViewModel)
         }
     }
 }

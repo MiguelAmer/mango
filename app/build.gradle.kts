@@ -52,30 +52,37 @@ dependencies {
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)
     implementation(libs.androidx.compose.material.icons.extended)
-    implementation(libs.coil.compose)
+
+    implementation(libs.hilt.android)
+    ksp(libs.hilt.compiler)
+
+    implementation(libs.androidx.navigation.compose)
+    implementation(libs.androidx.hilt.navigation.compose)
 
     implementation(libs.retrofit)
     implementation(libs.retrofit.gson)
+
 
     implementation(libs.room.runtime)
     implementation(libs.room.ktx)
     ksp(libs.room.compiler)
 
-    implementation(libs.hilt.android)
-    ksp(libs.hilt.compiler)
-
-
-
-    implementation(libs.androidx.navigation.compose)
-    implementation(libs.androidx.hilt.navigation.compose)
-
     testImplementation(libs.junit)
     testImplementation("org.jetbrains.kotlinx:kotlinx-coroutines-test:1.10.2")
-    testImplementation("io.mockk:mockk:1.13.8") // The best mocking library for Kotlin
+    testImplementation("io.mockk:mockk:1.13.8")
     androidTestImplementation(platform(libs.androidx.compose.bom))
     androidTestImplementation(libs.androidx.compose.ui.test.junit4)
     androidTestImplementation(libs.androidx.espresso.core)
     androidTestImplementation(libs.androidx.junit)
     debugImplementation(libs.androidx.compose.ui.test.manifest)
     debugImplementation(libs.androidx.compose.ui.tooling)
+    implementation(project(":core:designsystem"))
+    implementation(project(":core:database"))
+    implementation(project(":core:network"))
+    implementation(project(":feature:favorites"))
+    implementation(project(":feature:profile"))
+    implementation(project(":feature:productlist"))
+    implementation(project(":domain"))
+    implementation(project(":data"))
+
 }

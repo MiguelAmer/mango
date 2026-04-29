@@ -1,9 +1,9 @@
 package com.example.myapplication.di
 
-import com.example.myapplication.data.repository.ProductRepositoryImpl
-import com.example.myapplication.data.repository.UserRepositoryImpl
-import com.example.myapplication.domain.repository.ProductRepository
-import com.example.myapplication.domain.repository.UserRepository
+import com.example.data.repository.ProductRepositoryImpl
+import com.example.data.repository.UserRepositoryImpl
+import com.example.domain.repository.ProductRepository
+import com.example.domain.repository.UserRepository
 import dagger.Binds
 import dagger.Module
 import dagger.hilt.InstallIn

@@ -18,4 +18,11 @@ dependencyResolutionManagement {
 
 rootProject.name = "Mango Test"
 include(":app")
- 
+include(":feature:productlist")
+include(":feature:favorites")
+include(":feature:profile")
+include(":domain")
+include(":data")
+include(":core:network")
+include(":core:database")
+include(":core:designsystem")
